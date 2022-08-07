@@ -52,7 +52,8 @@
 
 作为一种创建类模式，在任何需要生成复杂对象的地方，都可以使用工厂方法模式
 
-有一点需要注意的地方就是复杂对象适合使用工厂模式，而简单对象，特别是只需要通过 new 就可以完成创建的对象，无需使用工厂模式。如果使用工厂模式，就需要引入一个工厂类，会增加系统的复杂度
+有一点需要注意的地方就是复杂对象适合使用工厂模式，而简单对象，特别是只需要通过 new
+就可以完成创建的对象，无需使用工厂模式。如果使用工厂模式，就需要引入一个工厂类，会增加系统的复杂度
 
 实现
 img_1.png
@@ -64,105 +65,108 @@ img_1.png
 它将向 ShapeFactory 传递信息（ CIRCLE / RECTANGLE / SQUARE ），以便获取它所需对象的类型
 
 范例
+
 1. 创建一个接口
    Shape.java
 
 ```JAVA
 public interface Shape {
-void draw();
+    void draw();
 }
 ```
 
 2. 创建实现接口的实体类
    Rectangle.java
 
-
 ```java
 
 public class Rectangle implements Shape {
 
-@Override
-public void draw() {
-System.out.println("Inside Rectangle::draw() method.");
-}
+    @Override
+    public void draw() {
+        System.out.println("Inside Rectangle::draw() method.");
+    }
 }
 ```
-Square.java
 
+Square.java
 
 ```java
 public class Square implements Shape {
 
-@Override
-public void draw() {
-System.out.println("Inside Square::draw() method.");
-}
+    @Override
+    public void draw() {
+        System.out.println("Inside Square::draw() method.");
+    }
 }
 ```
-Circle.java
 
+Circle.java
 
 ```java
 
 public class Circle implements Shape {
 
-@Override
-public void draw() {
-System.out.println("Inside Circle::draw() method.");
-}
+    @Override
+    public void draw() {
+        System.out.println("Inside Circle::draw() method.");
+    }
 }
 ```
+
 3. 创建一个工厂，生成基于给定信息的实体类的对象
    ShapeFactory.java
 
 ```java
 public class ShapeFactory {
 
-//使用 getShape 方法获取形状类型的对象
-public Shape getShape(String shapeType){
-if(shapeType == null){
-return null;
-}     
-if(shapeType.equalsIgnoreCase("CIRCLE")){
-return new Circle();
-} else if(shapeType.equalsIgnoreCase("RECTANGLE")){
-return new Rectangle();
-} else if(shapeType.equalsIgnoreCase("SQUARE")){
-return new Square();
-}
-return null;
-}
+    //使用 getShape 方法获取形状类型的对象
+    public Shape getShape(String shapeType) {
+        if (shapeType == null) {
+            return null;
+        }
+        if (shapeType.equalsIgnoreCase("CIRCLE")) {
+            return new Circle();
+        } else if (shapeType.equalsIgnoreCase("RECTANGLE")) {
+            return new Rectangle();
+        } else if (shapeType.equalsIgnoreCase("SQUARE")) {
+            return new Square();
+        }
+        return null;
+    }
 }
 ```
+
 4. 使用该工厂，通过传递类型信息来获取实体类的对象
    FactoryPatternDemo.java
 
 ```java
 public class FactoryPatternDemo {
 
-public static void main(String[] args) {
-ShapeFactory shapeFactory = new ShapeFactory();
+    public static void main(String[] args) {
+        ShapeFactory shapeFactory = new ShapeFactory();
 
-      //获取 Circle 的对象，并调用它的 draw 方法
-      Shape shape1 = shapeFactory.getShape("CIRCLE");
+        //获取 Circle 的对象，并调用它的 draw 方法
+        Shape shape1 = shapeFactory.getShape("CIRCLE");
 
-      //调用 Circle 的 draw 方法
-      shape1.draw();
+        //调用 Circle 的 draw 方法
+        shape1.draw();
 
-      //获取 Rectangle 的对象，并调用它的 draw 方法
-      Shape shape2 = shapeFactory.getShape("RECTANGLE");
+        //获取 Rectangle 的对象，并调用它的 draw 方法
+        Shape shape2 = shapeFactory.getShape("RECTANGLE");
 
-      //调用 Rectangle 的 draw 方法
-      shape2.draw();
+        //调用 Rectangle 的 draw 方法
+        shape2.draw();
 
-      //获取 Square 的对象，并调用它的 draw 方法
-      Shape shape3 = shapeFactory.getShape("SQUARE");
+        //获取 Square 的对象，并调用它的 draw 方法
+        Shape shape3 = shapeFactory.getShape("SQUARE");
 
-      //调用 Square 的 draw 方法
-      shape3.draw();
-}
+        //调用 Square 的 draw 方法
+        shape3.draw();
+    }
 }
 ```
+
 编译运行以上 Java 范例，输出结果如下
 
 Inside Circle::draw() method.
