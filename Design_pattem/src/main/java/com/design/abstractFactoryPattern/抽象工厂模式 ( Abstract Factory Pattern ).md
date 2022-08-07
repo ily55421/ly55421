@@ -1,14 +1,17 @@
-抽象工厂模式（Abstract Factory Pattern）是围绕一个超级工厂创建其他工厂
+# 抽象工厂模式（Abstract Factory Pattern）
 
-该超级工厂又称为其他工厂的工厂
+是围绕一个超级工厂创建其他工厂
+
+**该超级工厂又称为其他工厂的工厂**
 
 在抽象工厂模式中，接口是负责创建一个相关对象的工厂，不需要显式指定它们的类
 
 每个生成的工厂都能按照工厂模式提供对象
 
-抽象工厂模式属于创建型模式，它提供了一种创建对象的最佳方式。
+**抽象工厂模式属于创建型模式，它提供了一种创建对象的最佳方式。**
 
-摘要
+## 摘要
+
 1、意图：
 
 提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类
@@ -39,7 +42,7 @@
 
 7、优点：
 
-缺点：
+8丶缺点：
 
 产品族扩展非常困难，要增加一个系列的某一产品，既要在抽象的 Creator 里加代码，又要在具体的里面加代码
 
@@ -52,8 +55,7 @@
 
 产品族难扩展，产品等级易扩展
 
-实现
-img_1.png
+## 实现
 
 1、创建 Shape 和 Color 接口和实现这些接口的实体类
 2、创建抽象工厂类 AbstractFactory
@@ -66,268 +68,246 @@ img_1.png
 同时它还向 AbstractFactory 传递颜色信息 Color （ RED / GREEN / BLUE ），以便获取它所需对象的类型
 
 范例
+
 1. 为形状创建一个接口
    Shape.java
 
+```java
 public interface Shape {
-void draw();
+    void draw();
 }
+```
+
 2. 创建实现接口的实体类
    Rectangle.java
 
-// author: 搜云库技术团队(tech.souyunku.com)
-// Copyright © 2015-2065 tech.souyunku.com. All rights reserved.
-
-package com.souyunku.tech.gof;
-
+```java
 
 public class Rectangle implements Shape {
 
-@Override
-public void draw() {
-System.out.println("Inside Rectangle::draw() method.");
+    @Override
+    public void draw() {
+        System.out.println("Inside Rectangle::draw() method.");
+    }
 }
-}
+```
+
 Square.java
 
-// author: 搜云库技术团队(tech.souyunku.com)
-// Copyright © 2015-2065 tech.souyunku.com. All rights reserved.
-
-package com.souyunku.tech.gof;
-
+```java
 
 public class Square implements Shape {
 
-@Override
-public void draw() {
-System.out.println("Inside Square::draw() method.");
+    @Override
+    public void draw() {
+        System.out.println("Inside Square::draw() method.");
+    }
 }
-}
+```
+
 Circle.java
 
-// author: 搜云库技术团队(tech.souyunku.com)
-// Copyright © 2015-2065 tech.souyunku.com. All rights reserved.
-
-package com.souyunku.tech.gof;
+```java
 
 
 public class Circle implements Shape {
 
-@Override
-public void draw() {
-System.out.println("Inside Circle::draw() method.");
+    @Override
+    public void draw() {
+        System.out.println("Inside Circle::draw() method.");
+    }
 }
-}
+```
+
 3. 为颜色创建一个接口
    Color.java
 
-// author: 搜云库技术团队(tech.souyunku.com)
-// Copyright © 2015-2065 tech.souyunku.com. All rights reserved.
-
-package com.souyunku.tech.gof;
-
-
+```java
 public interface Color {
-void fill();
+    void fill();
 }
+```
+
 4. 创建实现颜色接口的实体类
    Red.java
 
-// author: 搜云库技术团队(tech.souyunku.com)
-// Copyright © 2015-2065 tech.souyunku.com. All rights reserved.
-
-package com.souyunku.tech.gof;
-
-
+```java
 public class Red implements Color {
 
-@Override
-public void fill() {
-System.out.println("Inside Red::fill() method.");
+    @Override
+    public void fill() {
+        System.out.println("Inside Red::fill() method.");
+    }
 }
-}
+```
+
 Green.java
 
-// author: 搜云库技术团队(tech.souyunku.com)
-// Copyright © 2015-2065 tech.souyunku.com. All rights reserved.
-
-package com.souyunku.tech.gof;
-
-
+```java
 public class Green implements Color {
 
-@Override
-public void fill() {
-System.out.println("Inside Green::fill() method.");
+    @Override
+    public void fill() {
+        System.out.println("Inside Green::fill() method.");
+    }
 }
-}
+```
+
 Blue.java
 
-// author: 搜云库技术团队(tech.souyunku.com)
-// Copyright © 2015-2065 tech.souyunku.com. All rights reserved.
-
-package com.souyunku.tech.gof;
-
+```java
 
 public class Blue implements Color {
 
-@Override
-public void fill() {
-System.out.println("Inside Blue::fill() method.");
+    @Override
+    public void fill() {
+        System.out.println("Inside Blue::fill() method.");
+    }
 }
-}
+```
+
 5. 为 Color 和 Shape 对象创建抽象类来获取工厂
    AbstractFactory.java
 
-// author: 搜云库技术团队(tech.souyunku.com)
-// Copyright © 2015-2065 tech.souyunku.com. All rights reserved.
-
-package com.souyunku.tech.gof;
+```java
 
 
 public abstract class AbstractFactory {
-abstract Color getColor(String color);
-abstract Shape getShape(String shape) ;
+    abstract Color getColor(String color);
+
+    abstract Shape getShape(String shape);
 }
+```
+
 6. 创建扩展了 AbstractFactory 的工厂类，基于给定的信息生成实体类的对象
    ShapeFactory.java
 
-// author: 搜云库技术团队(tech.souyunku.com)
-// Copyright © 2015-2065 tech.souyunku.com. All rights reserved.
-
-package com.souyunku.tech.gof;
-
+```java
 
 public class ShapeFactory extends AbstractFactory {
 
-@Override
-public Shape getShape(String shapeType){
-if(shapeType == null){
-return null;
-}     
-if(shapeType.equalsIgnoreCase("CIRCLE")){
-return new Circle();
-} else if(shapeType.equalsIgnoreCase("RECTANGLE")){
-return new Rectangle();
-} else if(shapeType.equalsIgnoreCase("SQUARE")){
-return new Square();
-}
-return null;
-}
+    @Override
+    public Shape getShape(String shapeType) {
+        if (shapeType == null) {
+            return null;
+        }
+        if (shapeType.equalsIgnoreCase("CIRCLE")) {
+            return new Circle();
+        } else if (shapeType.equalsIgnoreCase("RECTANGLE")) {
+            return new Rectangle();
+        } else if (shapeType.equalsIgnoreCase("SQUARE")) {
+            return new Square();
+        }
+        return null;
+    }
 
-@Override
-Color getColor(String color) {
-return null;
+    @Override
+    Color getColor(String color) {
+        return null;
+    }
 }
-}
+```
+
 ColorFactory.java
 
-// author: 搜云库技术团队(tech.souyunku.com)
-// Copyright © 2015-2065 tech.souyunku.com. All rights reserved.
-
-package com.souyunku.tech.gof;
-
+```java
 
 public class ColorFactory extends AbstractFactory {
 
-@Override
-public Shape getShape(String shapeType){
-return null;
-}
+    @Override
+    public Shape getShape(String shapeType) {
+        return null;
+    }
 
-@Override
-Color getColor(String color) {
-if(color == null){
-return null;
-}     
-if(color.equalsIgnoreCase("RED")){
-return new Red();
-} else if(color.equalsIgnoreCase("GREEN")){
-return new Green();
-} else if(color.equalsIgnoreCase("BLUE")){
-return new Blue();
+    @Override
+    Color getColor(String color) {
+        if (color == null) {
+            return null;
+        }
+        if (color.equalsIgnoreCase("RED")) {
+            return new Red();
+        } else if (color.equalsIgnoreCase("GREEN")) {
+            return new Green();
+        } else if (color.equalsIgnoreCase("BLUE")) {
+            return new Blue();
+        }
+        return null;
+    }
 }
-return null;
-}
-}
+```
+
 7. 创建一个工厂创造器/生成器类，通过传递形状或颜色信息来获取工厂
    FactoryProducer.java
 
-// author: 搜云库技术团队(tech.souyunku.com)
-// Copyright © 2015-2065 tech.souyunku.com. All rights reserved.
-
-package com.souyunku.tech.gof;
-
-
+```java
 public class FactoryProducer {
-public static AbstractFactory getFactory(String choice){
-if(choice.equalsIgnoreCase("SHAPE")){
-return new ShapeFactory();
-} else if(choice.equalsIgnoreCase("COLOR")){
-return new ColorFactory();
+    public static AbstractFactory getFactory(String choice) {
+        if (choice.equalsIgnoreCase("SHAPE")) {
+            return new ShapeFactory();
+        } else if (choice.equalsIgnoreCase("COLOR")) {
+            return new ColorFactory();
+        }
+        return null;
+    }
 }
-return null;
-}
-}
+```
+
 8. 使用 FactoryProducer 来获取 AbstractFactory，通过传递类型信息来获取实体类的对象
    AbstractFactoryPatternDemo.java
 
-// author: 搜云库技术团队(tech.souyunku.com)
-// Copyright © 2015-2065 tech.souyunku.com. All rights reserved.
-
-package com.souyunku.tech.gof;
+```java
 
 
 public class AbstractFactoryPatternDemo {
-public static void main(String[] args) {
+    public static void main(String[] args) {
 
-      //获取形状工厂
-      AbstractFactory shapeFactory = FactoryProducer.getFactory("SHAPE");
+        //获取形状工厂
+        AbstractFactory shapeFactory = FactoryProducer.getFactory("SHAPE");
 
-      //获取形状为 Circle 的对象
-      Shape shape1 = shapeFactory.getShape("CIRCLE");
+        //获取形状为 Circle 的对象
+        Shape shape1 = shapeFactory.getShape("CIRCLE");
 
-      //调用 Circle 的 draw 方法
-      shape1.draw();
+        //调用 Circle 的 draw 方法
+        shape1.draw();
 
-      //获取形状为 Rectangle 的对象
-      Shape shape2 = shapeFactory.getShape("RECTANGLE");
+        //获取形状为 Rectangle 的对象
+        Shape shape2 = shapeFactory.getShape("RECTANGLE");
 
-      //调用 Rectangle 的 draw 方法
-      shape2.draw();
+        //调用 Rectangle 的 draw 方法
+        shape2.draw();
 
-      //获取形状为 Square 的对象
-      Shape shape3 = shapeFactory.getShape("SQUARE");
+        //获取形状为 Square 的对象
+        Shape shape3 = shapeFactory.getShape("SQUARE");
 
-      //调用 Square 的 draw 方法
-      shape3.draw();
+        //调用 Square 的 draw 方法
+        shape3.draw();
 
-      //获取颜色工厂
-      AbstractFactory colorFactory = FactoryProducer.getFactory("COLOR");
+        //获取颜色工厂
+        AbstractFactory colorFactory = FactoryProducer.getFactory("COLOR");
 
-      //获取颜色为 Red 的对象
-      Color color1 = colorFactory.getColor("RED");
+        //获取颜色为 Red 的对象
+        Color color1 = colorFactory.getColor("RED");
 
-      //调用 Red 的 fill 方法
-      color1.fill();
+        //调用 Red 的 fill 方法
+        color1.fill();
 
-      //获取颜色为 Green 的对象
-      Color color2 = colorFactory.getColor("Green");
+        //获取颜色为 Green 的对象
+        Color color2 = colorFactory.getColor("Green");
 
-      //调用 Green 的 fill 方法
-      color2.fill();
+        //调用 Green 的 fill 方法
+        color2.fill();
 
-      //获取颜色为 Blue 的对象
-      Color color3 = colorFactory.getColor("BLUE");
+        //获取颜色为 Blue 的对象
+        Color color3 = colorFactory.getColor("BLUE");
 
-      //调用 Blue 的 fill 方法
-      color3.fill();
+        //调用 Blue 的 fill 方法
+        color3.fill();
+    }
 }
-}
+```
+
 编译运行以上 Java 范例，输出结果如下
 
-$ javac -d . src/main/com/souyunku/tech/gof/AbstractFactoryPatternDemo.java
-$ java  com.souyunku.tech.gof.AbstractFactoryPatternDemo
 Inside Circle::draw() method.
 Inside Rectangle::draw() method.
 Inside Square::draw() method.

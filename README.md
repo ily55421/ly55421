@@ -218,8 +218,8 @@ LSP 是继承复用的基石，只有当派生类可以替换掉基类，且软�
 
 
 
-- [五、工厂模式 ( Factory Pattern )](https://tech.souyunku.com/?p=2661)
-- [六、抽象工厂模式 ( Abstract Factory Pattern )](https://tech.souyunku.com/?p=2663)
+- [五、工厂模式 ( Factory Pattern )](https://github.com/ily55421/ly55421/blob/master/Design_pattem/src/main/java/com/design/factoryPattern/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%20(%20Factory%20Pattern%20).md)
+- [六、抽象工厂模式 ( Abstract Factory Pattern )](https://github.com/ily55421/ly55421/blob/master/Design_pattem/src/main/java/com/design/abstractFactoryPattern/%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%20(%20Abstract%20Factory%20Pattern%20).md)
 - [七、单例模式 ( Singleton Pattern )](https://tech.souyunku.com/?p=2665)
 - [八、建造者模式 ( Builder Pattern )](https://tech.souyunku.com/?p=2667)
 - [九、原型模式 ( Prototype Pattern )](https://tech.souyunku.com/?p=2669)
