@@ -1,5 +1,8 @@
 package com.design.bridgePattern;
 
+/**
+ *
+ */
 public abstract class Shape {
     protected DrawAPI drawAPI;
 

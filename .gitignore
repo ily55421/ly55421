@@ -2,6 +2,7 @@
 /bin/
 .settings/
 target/
+.idea
 
 # files for the dex VM  
 *.dex

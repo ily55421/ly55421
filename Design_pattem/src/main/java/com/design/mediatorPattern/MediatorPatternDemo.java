@@ -1,5 +1,8 @@
 package com.design.mediatorPattern;
 
+/**
+ * @author 84168
+ */
 public class MediatorPatternDemo {
     public static void main(String[] args) {
         User robert = new User("Robert");
