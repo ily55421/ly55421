@@ -127,7 +127,7 @@ public class Client {
 
     }
 
-    private static class ClientHandler extends ChannelHandlerAdapter  {
+    private static class ClientHandler extends ChannelHandlerAdapter {
         @Override
         public void channelActive(ChannelHandlerContext ctx) throws Exception {
             new Thread(() -> {
@@ -155,7 +155,7 @@ public class Client {
 
 ```
 
-## 备注 channelActive 为5.0版本特有方法 
+## 备注 channelActive 为5.0版本特有方法
 
 ```
         <dependency>
@@ -166,9 +166,8 @@ public class Client {
         </dependency>
 ```
 
-
-
 ## 效果
+
 ```
 from client
 from client
