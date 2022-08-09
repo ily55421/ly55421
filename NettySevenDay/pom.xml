@@ -13,5 +13,13 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    <dependencies>
+        <!--        5.0.0.Alpha2 才有 channelActive方法-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <!--            <version>4.1.25.Final</version>-->
+            <version>5.0.0.Alpha2</version>
+        </dependency>
+    </dependencies>
 </project>
