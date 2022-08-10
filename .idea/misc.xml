@@ -12,7 +12,11 @@
       <list>
         <option value="$PROJECT_DIR$/Design_pattem/pom.xml" />
         <option value="$PROJECT_DIR$/NettySevenDay/pom.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Netty_IM/pom.xml" />
+=======
+        <option value="$PROJECT_DIR$/javaStudy/pom.xml" />
+>>>>>>> origin/master
       </list>
     </option>
   </component>

@@ -5,7 +5,12 @@
     <file url="file://$PROJECT_DIR$/Design_pattem/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/NettySevenDay/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/NettySevenDay/src/main/resources" charset="UTF-8" />
+<<<<<<< HEAD
     <file url="file://$PROJECT_DIR$/Netty_IM/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Netty_IM/src/main/resources" charset="UTF-8" />
+=======
+    <file url="file://$PROJECT_DIR$/javaStudy/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/javaStudy/src/main/resources" charset="UTF-8" />
+>>>>>>> origin/master
   </component>
 </project>
