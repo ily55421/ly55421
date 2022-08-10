@@ -8,7 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="NettySevenDay" />
         <module name="Design_pattem" />
+        <module name="Netty_IM" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Netty_IM" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

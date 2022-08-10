@@ -4,11 +4,15 @@
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Netty_IM" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Design_pattem/pom.xml" />
         <option value="$PROJECT_DIR$/NettySevenDay/pom.xml" />
+        <option value="$PROJECT_DIR$/Netty_IM/pom.xml" />
       </list>
     </option>
   </component>
