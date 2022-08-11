@@ -12,8 +12,5 @@
         <module name="Netty_IM" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Netty_IM" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
