@@ -1,0 +1,22 @@
+syntax = "proto3"; // proto3 必须加此注解
+//生成文件所在包名
+option java_package = "com.example.nettytest._07Protobuf.pojo";
+//生成的java文件名
+option java_outer_classname = "Company";
+
+//生成类 相当于内部类 Company.Employee
+message Employee {
+  string name = 1;
+  int32 age = 2;
+  int32 phone = 3;
+  // 相当于List<Work>
+  repeated Work works = 4;
+}
+
+
+message Work{
+  int32 id = 1;
+  string name = 2;
+  string handle = 3;
+
+}
