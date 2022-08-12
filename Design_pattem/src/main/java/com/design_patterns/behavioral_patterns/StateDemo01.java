@@ -97,6 +97,7 @@ class Property {
             if (p.getWorth() < getPrice()) {
                 System.out.println(" does not have enough money to purchase");
             } else {
+                //
                 p.debit(getPrice());
                 setOwner(p);
                 System.out.println(" bought " + getName());
