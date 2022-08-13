@@ -1,0 +1,19 @@
+syntax = "proto3"; // proto3 必须加此注解
+//生成文件所在包名
+option java_package = "com.example.nettytest._08proto";
+//生成的java文件名
+option java_outer_classname = "HttpMsg";
+
+//生成类 相当于内部类 HttpMsg.Request
+message Request {
+  string msg = 1;
+  int32 sendTime = 2;
+  repeated string commandList = 3;
+}
+
+
+message Response{
+  string name = 1;
+  int64 sendTime = 2;
+
+}
