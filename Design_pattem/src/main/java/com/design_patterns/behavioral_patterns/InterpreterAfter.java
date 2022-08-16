@@ -1,10 +1,10 @@
-package com.design_patterns;
+package com.design_patterns.behavioral_patterns;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
-import static com.design_patterns.InterpreterBefore.precedence;
+import static com.design_patterns.behavioral_patterns.InterpreterBefore.precedence;
 
 /**
  * @Author: linK

@@ -1,4 +1,4 @@
-package com.design_patterns;
+package com.design_patterns.behavioral_patterns;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

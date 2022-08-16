@@ -7,10 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="NettySevenDay" />
-        <module name="javaStudy" />
         <module name="Design_pattem" />
         <module name="Netty_IM" />
+        <module name="Refactoring-techniques" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="javaStudy" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

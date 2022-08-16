@@ -28,7 +28,7 @@
             <scope>test</scope>
         </dependency>
 
-<!--        msgpack 序列化-->
+        <!--        msgpack 序列化-->
         <dependency>
             <groupId>org.msgpack</groupId>
             <artifactId>msgpack</artifactId>
@@ -41,11 +41,11 @@
             <version>3.25.0-GA</version>
         </dependency>
 
-<!--        protobuf-->
-<dependency>
-  <groupId>com.google.protobuf</groupId>
-  <artifactId>protobuf-java</artifactId>
-  <version>3.21.5</version>
-</dependency>
+        <!--        protobuf-->
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.21.5</version>
+        </dependency>
     </dependencies>
 </project>

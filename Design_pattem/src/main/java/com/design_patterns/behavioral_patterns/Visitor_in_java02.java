@@ -1,4 +1,4 @@
-package com.design_patterns;
+package com.design_patterns.behavioral_patterns;
 
 /**
  * @Author: linK
@@ -65,7 +65,7 @@ class BAZ02 implements Element02 {
  * 访问接口
  * 如果需要添加 可访问对象 Visitable  就要追加一个访问接口 然后去具体的访问者中实现
  *
- * {@link com.design_patterns.Visitor_Double_dispatch 利用反射的实现}
+ * {@link Visitor_Double_dispatch 利用反射的实现}
  */
 interface Visitor {
     void visit(FOO03 foo);

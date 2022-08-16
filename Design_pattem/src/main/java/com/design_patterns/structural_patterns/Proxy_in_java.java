@@ -1,4 +1,4 @@
-package com.design_patterns;
+package com.design_patterns.structural_patterns;
 
 import java.io.BufferedReader;
 import java.io.IOException;
